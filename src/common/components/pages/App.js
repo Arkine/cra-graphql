@@ -1,16 +1,17 @@
 import React from 'react';
 
-import {
-	PrimaryNavigation
-} from '../';
+import Header from '../layouts/Header';
+import Footer from '../layouts/Footer';
 
 export default class App extends React.Component {
 	render() {
 		return (
 			<main className="App">
-				<PrimaryNavigation />
+				<Header />
 
 				{this.props.children}
+
+				<Footer />
 			</main>
 		);
 	}
