@@ -28,5 +28,5 @@ import './server/models/Event';
 
 import app from './server/App';
 const server = app.listen(app.get('port'), () => {
-	console.log(`app started, listening on port ${server.address().port}`)
+	console.log(`App listening on port ${server.address().port}`)
 });

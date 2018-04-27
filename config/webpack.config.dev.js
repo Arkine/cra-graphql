@@ -11,6 +11,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const globImporter = require('node-sass-glob-importer');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -167,9 +168,6 @@ module.exports = {
                 },
               },
               {
-                loader: require.resolve('sass-loader')
-              },
-              {
                 loader: require.resolve('postcss-loader'),
                 options: {
                   // Necessary for external CSS imports to work
@@ -188,6 +186,13 @@ module.exports = {
                     }),
                   ],
                 },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  include: paths.appStyles,
+                  importer: globImporter()
+                }
               },
             ],
           },

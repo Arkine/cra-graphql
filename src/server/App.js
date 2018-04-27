@@ -11,6 +11,8 @@ import routes from './routes';
 import apiRoutes from './api';
 import errorHandlers from './errorHandlers';
 
+console.log('Starting App...')
+
 const app = express();
 
 app.set('port', process.env.PORT || 7777);

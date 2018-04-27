@@ -4,8 +4,6 @@ import {
 } from '../actions/Events';
 import { connect } from 'react-redux';
 
-import './EventsFeed.scss';
-
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 
