@@ -23,11 +23,10 @@ mongoose.connection.on('error', (err) => {
 	console.error('There was a DB err:', err);
 });
 
+
 import './server/models/Event';
 
-
-import app from './server';
-
+import app from './server/App';
 const server = app.listen(app.get('port'), () => {
 	console.log(`app started, listening on port ${server.address().port}`)
 });
