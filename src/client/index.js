@@ -4,8 +4,12 @@ import { Provider } from 'react-redux';
 import { Switch, Route, Router } from 'react-router-dom';
 
 import { store, history } from '../server/store';
-import App from '../common/App';
-import NotFound from '../common/NotFound';
+import {
+	App,
+	EventsFeed,
+	NotFound
+} from '../common/components';
+
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
@@ -13,6 +17,7 @@ ReactDOM.render((
 		<Router history={history}>
 			<Switch>
 				<Route exact path="/" component={App} />
+				<Route exact path="/events" component={EventsFeed} />
 				<Route component={NotFound} />
 			</Switch>
 		</Router>
