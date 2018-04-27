@@ -1,8 +1,3 @@
-require('babel-register')({
-	presets: ["env", "react"]
-});
-require('babel-polyfill');
-
 import fs from 'fs';
 import dotEnv from 'dotenv';
 import path from 'path';
