@@ -7,11 +7,11 @@ import {
 export default class Footer extends React.PureComponent {
 	render() {
 		return (
-			<div className="Footer">
+			<footer className="Footer">
 				<div className="Footer__wrapper">
 					<FooterNavigation />
 				</div>
-			</div>
+			</footer>
 		);
 	}
 }

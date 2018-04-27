@@ -1,3 +1,15 @@
+html {
+	font-size: 20px;
+}
+
 body {
-	background-color: pink;
+	font-family: $primary-font-family;
+}
+
+main {
+	min-height: 600px;
+}
+
+h1 {
+	color: $color-red;
 }

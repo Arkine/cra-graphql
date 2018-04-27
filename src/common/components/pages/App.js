@@ -8,13 +8,14 @@ import '../../../styles/styles.scss';
 export default class App extends React.Component {
 	render() {
 		return (
-			<main className="App">
+			<div className="App">
 				<Header />
-
-				{this.props.children}
+				<main className="inner">
+					{this.props.children}
+				</main>
 
 				<Footer />
-			</main>
+			</div>
 		);
 	}
 }

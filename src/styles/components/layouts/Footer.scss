@@ -1,13 +1,13 @@
-.EventsFeed {
+.Footer {
 	display: flex;
 	justify-content: center;
+
+	background-color: #ccc;
+
+	padding: 1rem;
 
 	&__wrapper {
 		width: 100%;
 		max-width: $row-width;
-	}
-
-	.event {
-		border: 1px solid white;
 	}
 }

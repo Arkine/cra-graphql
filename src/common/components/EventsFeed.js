@@ -37,9 +37,11 @@ class EventsFeed extends React.PureComponent {
 		});
 
 		return (
-			<div className="EventsFeed">
-				{eventsContent}
-			</div>
+			<section className="EventsFeed">
+				<div clasName="EventsFeed__wrapper">
+					{eventsContent}
+				</div>
+			</section>
 		);
 	}
 };
