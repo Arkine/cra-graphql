@@ -1,25 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Switch, Route, Router } from 'react-router-dom';
+import { Switch, Route, Router, IndexRoute } from 'react-router-dom';
 
 import { store, history } from '../server/store';
+
+// import HomePage from '../common/components/pages/HomePage';
+// import NotFound from '../common/components/pages/NotFound';
 import {
 	App,
-	EventsFeed,
-	NotFound
-} from '../common/components';
+	HomePage,
+	NotFound,
+	EventsPage
+} from '../common/components/pages';
 
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
 	<Provider store={store}>
 		<Router history={history}>
-			<Switch>
-				<Route exact path="/" component={App} />
-				<Route exact path="/events" component={EventsFeed} />
-				<Route component={NotFound} />
-			</Switch>
+			<App>
+				<Switch>
+
+					<Route exact path="/" component={HomePage} />
+					<Route exact path="/events" component={EventsPage} />
+
+					<Route component={NotFound} />
+				</Switch>
+			</App>
 		</Router>
 	</Provider>
 	),
