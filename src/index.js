@@ -5,13 +5,15 @@ import { Switch, Route, Router } from 'react-router-dom';
 
 import { store, history } from './server/store';
 import App from './common/App';
+import NotFound from './common/NotFound';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
 	<Provider store={store}>
 		<Router history={history}>
 			<Switch>
-				<Route path="/" component={App} />
+				<Route exact path="/" component={App} />
+				<Route component={NotFound} />
 			</Switch>
 		</Router>
 	</Provider>
