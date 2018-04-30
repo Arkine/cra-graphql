@@ -3,10 +3,9 @@ import React from 'react';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
 
-import { AppWrapper, BaseStyles } from 'styles/base';
-
 // Apply base styles
-BaseStyles();
+import 'styles/base';
+import { AppWrapper } from 'styles/App';
 
 export default class App extends React.Component {
 	render() {
