@@ -8,7 +8,7 @@ import cors from 'cors';
 import path from 'path';
 
 import routes from './routes';
-import apiRoutes from './api';
+// import apiRoutes from './api';
 import errorHandlers from './errorHandlers';
 
 console.log('Starting App...')
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set our routes
 app.use('/', routes);
-app.use('/api', apiRoutes);
+// app.use('/api', apiRoutes);
 
 // Error handling routes
 app.use(errorHandlers.developmentErrors);
