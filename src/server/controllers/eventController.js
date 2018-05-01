@@ -4,7 +4,7 @@ import express from 'express';
 const Event = mongoose.model('Event');
 
 module.exports = {
-	getEvents: async (req, res) => {
+	getEvents: async () => {
 		const events = await Event.find({}).limit(10);
 
 		if (!events) {

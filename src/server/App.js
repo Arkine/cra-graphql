@@ -2,15 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 import bodyParser from 'body-parser';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import cors from 'cors';
-import path from 'path';
 
 import graphqlHTTP from 'express-graphql';
 import schema from './api/rootSchema';
-
-import errorHandlers from './errorHandlers';
 
 console.log('Starting App...')
 
