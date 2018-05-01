@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
 export const AppWrapper = styled.div`
-	border: 1px solid yellow;
+
+`;
+
+export const AppContent = styled.main`
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 `;

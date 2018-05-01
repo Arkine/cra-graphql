@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 
-import 'styles/components/EventsFeed.scss';
-
 class EventsFeed extends React.PureComponent {
 	componentWillMount() {
 		this.props.loadEvents();
