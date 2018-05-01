@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom';
 import cors from 'cors';
 import path from 'path';
 
+import graphqlHTTP from 'express-graphql';
+import schema from './api/rootSchema';
+
 import routes from './routes';
 // import apiRoutes from './api';
 import errorHandlers from './errorHandlers';
@@ -26,6 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set our routes
 app.use('/', routes);
+app.use('/graphql', graphqlHTTP({
+	schema,
+	graphiql: true
+}));
 // app.use('/api', apiRoutes);
 
 // Error handling routes
