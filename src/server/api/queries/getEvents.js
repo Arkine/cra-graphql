@@ -5,6 +5,8 @@ import {
 
 import eventController from '../../controllers/eventController';
 
+import { catchErrors } from '../../errorHandlers';
+
 import Event from '../types/Event';
 
 export default {

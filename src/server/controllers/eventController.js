@@ -5,8 +5,8 @@ const Event = mongoose.model('Event');
 
 module.exports = {
 	getEvents: async (req, res) => {
-		// const events = await Event.find({}).limit(10);
-		const events = null;
+		const events = await Event.find({}).limit(10);
+
 		if (!events) {
 			throw new Error('There was an error getting the events...');
 

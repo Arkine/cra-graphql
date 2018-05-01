@@ -11,7 +11,6 @@ class EventsFeed extends React.PureComponent {
 		console.log(this.props);
 		const { events, loading, error } = this.props.data;
 
-
 		let eventsContent = null;
 
 		if (loading) {
@@ -32,7 +31,7 @@ class EventsFeed extends React.PureComponent {
 
 		return (
 			<section className="EventsFeed">
-				<div clasName="EventsFeed__wrapper">
+				<div className="EventsFeed__wrapper">
 					{eventsContent}
 				</div>
 			</section>
