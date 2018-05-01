@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set our routes
 app.use('/', routes);
+
 app.use('/graphql', graphqlHTTP({
 	schema,
 	graphiql: true

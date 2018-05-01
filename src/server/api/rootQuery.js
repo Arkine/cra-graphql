@@ -2,11 +2,11 @@ import {
 	GraphQLObjectType
 } from 'graphql';
 
-import getEvents from './queries/getEvents';
+import events from './queries/getEvents';
 
 export default new GraphQLObjectType({
 	name: 'Query',
 	fields: () => ({
-		getEvents
+		events
 	})
 });
