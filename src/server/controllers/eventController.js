@@ -8,11 +8,10 @@ module.exports = {
 		const events = await Event.find({}).limit(10);
 
 		if (!events) {
-			res.send(400);
+			// res.send(400);
 
 			return;
 		}
-
-		res.json(events);
+		return events;
 	}
 };
