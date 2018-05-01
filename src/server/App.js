@@ -32,8 +32,5 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 // Error handling routes
-// app.use(errorHandlers.developmentErrors);
-// app.use(errorHandlers.productionErrors);
-// app.use(errorHandlers.notFound);
 
 export default app;
