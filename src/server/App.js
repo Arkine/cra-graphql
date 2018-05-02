@@ -7,7 +7,7 @@ import cors from 'cors';
 import graphqlHTTP from 'express-graphql';
 import schema from './api/rootSchema';
 
-console.log('Starting App...')
+console.log('Starting App...');
 
 const app = express();
 

@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 
 import {
 	PrimaryNavigationWrapper,
-	PrimaryNavigationContent
-
 } from 'styles/components/navigation/PrimaryNavigation';
 
-import { button } from 'styles/components';
+// import { button } from 'styles/components';
 
 export default class PrimaryNavigation extends React.PureComponent {
 	render() {
