@@ -79,6 +79,7 @@
     "concurrently": "^3.5.1",
     "node-sass": "^4.9.0",
     "node-sass-glob-importer": "^5.1.2",
+    "nodemon": "^1.17.3",
     "sass-loader": "^7.0.1"
   },
   "jest": {
