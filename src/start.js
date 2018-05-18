@@ -1,4 +1,3 @@
-import fs from 'fs';
 import dotEnv from 'dotenv';
 import path from 'path';
 import mongoose from 'mongoose';
@@ -9,8 +8,6 @@ if (major < 7 || (major === 7 && minor <=5)) {
 	console.log('You are using an older version of node. Please upgrade to Node version 7.6 or greater.')
 	process.exit();
 }
-
-mongoose.Promise = global.Promise;
 
 // Set env variables
 dotEnv.config({

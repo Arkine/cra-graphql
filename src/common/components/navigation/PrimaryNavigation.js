@@ -15,6 +15,7 @@ export default class PrimaryNavigation extends React.PureComponent {
 					<nav className="PrimaryNavigation__nav">
 						<Link to="/">Home</Link>
 						<Link to="/events">Events</Link>
+						<Link to="/login">Login</Link>
 					</nav>
 				</div>
 			</PrimaryNavigationWrapper>
