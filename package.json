@@ -40,6 +40,7 @@
     "jest": "20.0.4",
     "mongoose": "^5.0.16",
     "object-assign": "4.1.1",
+    "passport": "^0.4.0",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
