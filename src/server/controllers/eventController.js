@@ -7,10 +7,18 @@ module.exports = {
 		const events = await Event.find({}).limit(10);
 
 		if (!events) {
-			throw new Error('There was an error getting the events...');
-
-			return;
+			// res.status(404);
 		}
 		return events;
+	},
+
+	getEvent: async (id) => {
+		const event = await Event.findOneByID({ _id: id });
+
+		if (!event) {
+			// res.status(404);
+		}
+
+		return event;
 	}
 };

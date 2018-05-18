@@ -1,13 +1,10 @@
 import {
-	GraphQLObjectType,
 	GraphQLList
 } from 'graphql';
 
-import eventController from '../../controllers/eventController';
+import eventController from '../../../controllers/eventController';
 
-import { catchErrors } from '../../errorHandlers';
-
-import Event from '../types/Event';
+import Event from '../../types/Event';
 
 export default {
 	type: new GraphQLList(Event),

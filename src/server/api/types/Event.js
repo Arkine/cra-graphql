@@ -8,11 +8,17 @@ export default new GraphQLObjectType({
 	name: 'Event',
 	description: 'An event',
 	fields: {
-		_id: {
-			type: GraphQLID
+		id: {
+			type: GraphQLID,
+			resolve: (root, args, context, info) => {
+				return root.id;
+			}
 		},
 		title: {
-			type: GraphQLString
+			type: GraphQLString,
+			resolve: (root, args, context, info) => {
+				return root.title
+			}
 		}
 	}
 })

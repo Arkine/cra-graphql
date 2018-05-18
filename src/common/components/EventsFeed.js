@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import { Link } from 'react-router-dom';
 
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
@@ -22,9 +23,10 @@ class EventsFeed extends React.PureComponent {
 		}
 
 		eventsContent = events.map((event, index) => {
+	
 			return (
 				<div className="event" key={index}>
-					{event.title}
+					<Link to={`events/${event.id}`}>{event.title}</Link>
 				</div>
 			);
 		});
@@ -40,8 +42,9 @@ class EventsFeed extends React.PureComponent {
 };
 
 export default graphql(gql`
-	query getAllEvents {
-		events{
+	query {
+		events {
+			id,
 			title
 		}
 	}

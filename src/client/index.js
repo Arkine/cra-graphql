@@ -22,7 +22,7 @@ const client = new ApolloClient({
 });
 
 const childProps = {
-	isAuthenticated: false
+	isAuthenticated: true
 }
 
 ReactDOM.render((
