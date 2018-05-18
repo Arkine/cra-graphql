@@ -44,7 +44,7 @@ export default class LoginForm extends React.Component {
                 />
 
                 <div>
-                    <div className="button submit" onClick={() => this._confirm()}>Login</div>
+                    <button className="button submit" onClick={() => this._confirm()}>Login</button>
                 </div>
             </div>
         );

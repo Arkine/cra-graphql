@@ -23,7 +23,7 @@ app.set('port', process.env.PORT || 7777);
 app.use(cors());
 
 // Set static files directory
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Parses body data into JSON
 app.use(bodyParser.json());
