@@ -9,8 +9,9 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
 
-// Our GraphQL Schema model
 import schema from './api/rootSchema';
+
+const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
 const MongoStore = require('connect-mongo')(session);
 
@@ -18,13 +19,19 @@ console.log('Starting App...');
 
 const app = express();
 
+// Set the app port
 app.set('port', process.env.PORT || 7777);
 
 // Prevents Xor request errs
 app.use(cors());
 
 // Set static files directory
-app.use(express.static(path.join(__dirname, 'public')));
+// console.log('static', path.join(__dirname, '../public'));
+// if (!isDev) {
+
+// }
+
+
 
 // Parses body data into JSON
 app.use(bodyParser.json());
@@ -36,6 +43,7 @@ app.use(expressValidator());
 // Populate req.cookies
 app.use(cookieParser());
 
+// Session data
 app.use(session({
 	secret: process.env.SECRET,
 	key: process.env.KEY,
@@ -48,12 +56,23 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set our routes
-app.use('/graphql', graphqlHTTP({
+
+// Graphql Server
+app.use('/graphql', (req, res, next) => {
+	console.log('hit me');
+
+	next();
+},
+graphqlHTTP({
 	schema,
-	graphiql: true // Lets us use the cool graphql testing tool
+	graphiql: isDev // Lets us use the cool graphql testing tool. Disable for live
 }));
 
-// Error handling routes
 
-export default app;
+
+app.use("/static", express.static(path.join(__dirname, '../../build/static')));
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, '../../build/index.html'));
+});
+
+module.exports = app;

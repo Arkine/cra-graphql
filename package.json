@@ -1,6 +1,7 @@
 {
   "name": "node-self-react",
   "version": "0.1.0",
+  "proxy": "http://localhost:7777",
   "private": true,
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.12",
@@ -73,7 +74,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "start:server": "nodemon ./src/start.js --exec babel-node",
-    "dev": "concurrently --raw \"yarn run start:server\" \"yarn run start\""
+    "dev": "concurrently --raw --kill-others-on-fail \"yarn run start:server\" \"yarn run start\""
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

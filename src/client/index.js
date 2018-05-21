@@ -16,7 +16,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const client = new ApolloClient({
 	link: new HttpLink({
-		uri: 'http://localhost:7777/graphql'
+		uri: 'http://localhost:3000/graphql'
 	}),
 	cache: new InMemoryCache()
 });
