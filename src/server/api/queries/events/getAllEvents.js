@@ -4,10 +4,10 @@ import {
 
 import eventController from '../../../controllers/eventController';
 
-import Event from '../../types/Event';
+import EventType from '../../types/eventType';
 
 export default {
-	type: new GraphQLList(Event),
+	type: new GraphQLList(EventType),
 	description: "return all events",
 	resolve() {
 		return eventController.getEvents();

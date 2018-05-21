@@ -7,8 +7,9 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
-
 import graphqlHTTP from 'express-graphql';
+
+// Our GraphQL Schema model
 import schema from './api/rootSchema';
 
 const MongoStore = require('connect-mongo')(session);
@@ -36,8 +37,8 @@ app.use(expressValidator());
 app.use(cookieParser());
 
 app.use(session({
-	secret: "secret",
-	key: "key",
+	secret: process.env.SECRET,
+	key: process.env.KEY,
 	resave: false,
 	saveUninitialized: false,
 	store: new MongoStore({ mongooseConnection: mongoose.connection })
@@ -50,7 +51,7 @@ app.use(passport.session());
 // Set our routes
 app.use('/graphql', graphqlHTTP({
 	schema,
-	graphiql: true
+	graphiql: true // Lets us use the cool graphql testing tool
 }));
 
 // Error handling routes

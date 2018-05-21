@@ -22,8 +22,11 @@ class EventsFeed extends React.PureComponent {
 			return <ErrorMessage message={error.message} />
 		}
 
+		if (events.length === 0) {
+			return <div className="no-results">No events to display.</div>
+		}
+
 		eventsContent = events.map((event, index) => {
-	
 			return (
 				<div className="event" key={index}>
 					<Link to={`events/${event.id}`}>{event.title}</Link>

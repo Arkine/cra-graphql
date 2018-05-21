@@ -13,7 +13,7 @@ module.exports = {
 	},
 
 	getEvent: async (id) => {
-		const event = await Event.findOneByID({ _id: id });
+		const event = await Event.findById(id);
 
 		if (!event) {
 			// res.status(404);

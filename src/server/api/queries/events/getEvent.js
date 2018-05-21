@@ -1,9 +1,8 @@
 import {
-    GraphQLID,
-    Input
+    GraphQLID
 } from 'graphql';
 
-import EventType from '../../types/Event';
+import EventType from '../../types/eventType';
 
 import eventController from '../../../controllers/eventController';
 
@@ -16,6 +15,7 @@ export default {
         }
     },
     resolve(root, args, context, info) {
+        // code to get data from DB
         const { id } = args;
         console.log('kevan:', id);
         return eventController.getEvent(id);
