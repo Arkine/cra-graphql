@@ -15,9 +15,9 @@ export default {
         }
     },
     resolve(root, args, context, info) {
-        // code to get data from DB
-        const { id } = args;
-        console.log('kevan:', id);
-        return eventController.getEvent(id);
+       
+        console.log('event ID:', args.id);
+        
+        return eventController.getEvent(args.id);
     }
 }

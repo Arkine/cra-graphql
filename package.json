@@ -1,5 +1,5 @@
 {
-  "name": "node-self-react",
+  "name": "node-graphql-express-mongo",
   "version": "0.1.0",
   "proxy": "http://localhost:7777",
   "private": true,
@@ -90,7 +90,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
-    "cra-build-watch": "^1.0.1",
     "node-sass": "^4.9.0",
     "node-sass-glob-importer": "^5.1.2",
     "nodemon": "^1.17.3",

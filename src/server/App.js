@@ -50,10 +50,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Graphql Server
-app.use('/graphql', graphqlHTTP({
+app.use('/graphql', graphqlHTTP(req => ({
 	schema,
-	graphiql: isDev // Lets us use the cool graphql testing tool. Disable for live
-}));
+	graphiql: isDev, // Lets us use the cool graphql testing tool. Disable for live
+	context: {
+		user: req.user
+	}
+})));
 
 // set where the static files are located
 app.use("/static", express.static(path.join(__dirname, '../../build/static')));
