@@ -10,6 +10,7 @@ import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
 
 import schema from './api/rootSchema';
+import './passportHandler.js';
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
