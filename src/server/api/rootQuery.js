@@ -2,8 +2,8 @@ import {
 	GraphQLObjectType
 } from 'graphql';
 
-import events from './queries/events/getAllEvents';
-import event from './queries/events/getEvent';
+import events from './resolvers/events/getAllEvents';
+import event from './resolvers/events/getEvent';
 
 // This is where our Query names are set and resolve to
 export default new GraphQLObjectType({

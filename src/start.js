@@ -24,6 +24,6 @@ mongoose.connection.on('error', (err) => {
 import './server/models/Event';
 
 const app = require('./server/App');
-const server = app.listen(3000, () => {
+const server = app.listen(7777, () => {
 	console.log(`App listening on port ${server.address().port}`)
 });

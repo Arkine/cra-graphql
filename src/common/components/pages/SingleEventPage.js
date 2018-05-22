@@ -1,13 +1,31 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+
+import axios from 'axios';
+
+import GET_EVENT_QUERY from 'server/api/queries/getEvent';
 
 import LoadingSpinner from '../LoadingSpinner';
 
 class SingleEventPage extends React.Component {
+    componentDidMount() {
+        // console.log('props', this.props);
+    
+        // if (!this.props.getEventQuery) {
+        //     return null;
+        // } 
+        // console.log("asdasdasdaspidjapj");
+        // console.log('shit is changing');
+        // this.props.getEventQuery({
+        //     variables: {
+        //         id: "5acfe45d99561370c3e1b679" 
+        //     }
+        // });
+    }
+
     render() {
-        const { event, loading } = this.props;
-        console.log(this.props)
+        const { event, loading } = this.props.data;
+ 
         if (loading) {
             return (
                 <LoadingSpinner />
@@ -25,11 +43,10 @@ class SingleEventPage extends React.Component {
     }
 }
 
-export default graphql(gql`
-    query {
-        event(id: $id) {
-            id,
-            title
+export default graphql(GET_EVENT_QUERY, { 
+    options: (ownProps) => ({
+        variables: {
+            id: ownProps.match.params.id
         }
-    }
-`)(SingleEventPage)
+    })
+})(SingleEventPage); 
