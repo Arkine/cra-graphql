@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 
-import axios from 'axios';
+import LoadingSpinner from '../LoadingSpinner';
 
 import GET_EVENT_QUERY from 'server/api/queries/getEvent';
-
-import LoadingSpinner from '../LoadingSpinner';
 
 class SingleEventPage extends React.Component {
     componentDidMount() {

@@ -9,7 +9,7 @@ import ErrorMessage from './ErrorMessage';
 class EventsFeed extends React.PureComponent {
 
 	render() {
-		console.log(this.props);
+
 		const { events, loading, error } = this.props.data;
 
 		let eventsContent = null;
