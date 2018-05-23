@@ -10,7 +10,7 @@ class AddEvent extends React.Component {
 		title: ''
 	}
 
-	async submitForm(e) {
+	submitForm(e) {
 		e.preventDefault();
 
 		this.props.addEventMutation({
