@@ -17,7 +17,7 @@ const client = new ApolloClient({
 });
 
 const childProps = {
-	isAuthenticated: true // TODO: Use Passportjs authentication
+	// isAuthenticated: true // TODO: Use Passportjs authentication
 }
 
 ReactDOM.render((

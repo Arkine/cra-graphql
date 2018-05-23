@@ -1,4 +1,3 @@
-import { gql } from 'graphql-tag';
 import {
 	GraphQLString,
 	GraphQLID
@@ -10,7 +9,7 @@ import eventController from '../../../controllers/eventController';
 
 export default {
 	type: EventType,
-	description: 'Add an Event',
+	description: 'Add an event',
 	args: {
 		title: {
 			type: GraphQLString

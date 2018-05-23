@@ -11,9 +11,9 @@ class SingleEventPage extends React.Component {
     render() {
 		console.log(this.props);
 
-        const { event, loading } = this.props;
+        const { event, loading, status } = this.props;
  
-        if (loading) {
+        if (loading || status < 7) {
             return (
                 <LoadingSpinner />
             )

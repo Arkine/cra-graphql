@@ -4,6 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 // Parses out query string params
 function querystring(name, url = window.location.href) {
     name = name.replace(/[[]]/g, "\\$&");
+    console.log('redired:', url);
 
     const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i");
     const results = regex.exec(url);
@@ -22,7 +23,6 @@ function querystring(name, url = window.location.href) {
 // If the user is authenticated, load component. Else, redirect to home (if no redirect param is set)
 export default ({ component: C, props: cProps, ...rest}) => {
     const redirect = querystring("redirect");
-    console.log('props:', cProps);
     return (
         <Route
             {...rest}

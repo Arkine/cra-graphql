@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import {
-	PrimaryNavigationWrapper,
+	PrimaryNavigationContainer,
 } from 'styles/components/navigation/PrimaryNavigation';
 
 // import { button } from 'styles/components';
@@ -10,7 +10,7 @@ import {
 export default class PrimaryNavigation extends React.PureComponent {
 	render() {
 		return (
-			<PrimaryNavigationWrapper>
+			<PrimaryNavigationContainer>
 				<div className="PrimaryNavigation__wrapper">
 					<nav className="PrimaryNavigation__nav">
 						<Link to="/">Home</Link>
@@ -18,7 +18,7 @@ export default class PrimaryNavigation extends React.PureComponent {
 						<Link to="/login">Login</Link>
 					</nav>
 				</div>
-			</PrimaryNavigationWrapper>
+			</PrimaryNavigationContainer>
 		);
 	}
 }

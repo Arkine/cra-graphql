@@ -16,7 +16,7 @@ class EventsFeed extends React.Component {
 
 		let eventsContent = null;
 
-		if (loading) {
+		if (loading || status < 7) {
 			return <LoadingSpinner />;
 		}
 		

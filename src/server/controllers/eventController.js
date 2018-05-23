@@ -9,6 +9,7 @@ module.exports = {
 		if (!events) {
 			// res.status(404);
 		}
+
 		return events;
 	},
 
@@ -36,13 +37,11 @@ module.exports = {
 		const event = await Event.findOneAndUpdate(
 			{
 				id: data.id
-			},
-			{
+			},{
 				$set: {
 					title: data.title
 				}
-			},
-			{
+			},{
 				new: true
 			}
 		);

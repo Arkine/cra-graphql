@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PrimaryNavigationWrapper = styled.div`
+export const PrimaryNavigationContainer = styled.div`
 	display: flex;
 	justify-content: flex-end;
 

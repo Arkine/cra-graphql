@@ -137,3 +137,5 @@ data.networkStatus is useful if you want to display a different loading indicato
 7. **ready**: No request is in flight for this query, and no errors happened. Everything is OK.
 8. **error**: No request is in flight for this query, but one or more errors were detected.
 
+If the network status is less then 7 then it is equivalent to data.loading being true. In fact you could replace all of your data.loading checks with data.networkStatus < 7 and you would not see a difference. It is recommended that you use data.loading, however.
+

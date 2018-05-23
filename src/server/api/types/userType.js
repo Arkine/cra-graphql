@@ -19,6 +19,18 @@ export default new GraphQLObjectType({
             resolve: (root, args, context, info) => {
                 return root.name;
             }
-        }
+        },
+		email: {
+			type: GraphQLString,
+			resolve: (root, args, context, info) => {
+				return root.email;
+			}
+		},
+		password: {
+			type: GraphQLID,
+			resolve: (root, args, context, info) => {
+				return this.password;
+			}
+		}
     }
 });
