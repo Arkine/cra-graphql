@@ -123,4 +123,4 @@ export default new GraphQLObjectType({
 	})
 });
 ```
-see video series for graphql help: see video: https://www.youtube.com/watch?v=07uyIZMqgJM
+see video series for graphql help: see video: https://www.youtube.com/watch?v=Y0lDGjwRYKw&list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f

@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 
-class EventsFeed extends React.PureComponent {
+import GET_ALL_EVENTS_QUERY from 'server/api/queries/events/getAllEvents';
+
+class EventsFeed extends React.Component {
 
 	render() {
 
@@ -44,11 +46,4 @@ class EventsFeed extends React.PureComponent {
 	}
 };
 
-export default graphql(gql`
-	query {
-		events {
-			id,
-			title
-		}
-	}
-`)(EventsFeed);
+export default graphql(GET_ALL_EVENTS_QUERY)(EventsFeed);

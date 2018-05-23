@@ -4,7 +4,7 @@ const Event = mongoose.model('Event');
 
 module.exports = {
 	getEvents: async () => {
-		const events = await Event.find({}).limit(10);
+		const events = await Event.find({});
 
 		if (!events) {
 			// res.status(404);
@@ -20,5 +20,33 @@ module.exports = {
 		}
 
 		return event;
+	},
+
+	addEvent: (data) => {
+		const event = new Event({
+			title: data.title
+		});
+
+		event.save();
+
+		return event;
+	},
+
+	updateEvent: async (data) => {
+		const event = await Event.findOneAndUpdate(
+			{
+				id: data.id
+			},
+			{
+				$set: {
+					title: data.title
+				}
+			},
+			{
+				new: true
+			}
+		);
+
+		event.save();
 	}
 };

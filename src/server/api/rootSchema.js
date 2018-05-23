@@ -9,7 +9,7 @@ import mutation from './rootMutations';
 
 export default new GraphQLSchema({
 	query,
-	// mutation,
+	mutation,
 	types: [
 		Event
 	]

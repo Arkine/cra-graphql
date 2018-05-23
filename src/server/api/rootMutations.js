@@ -2,14 +2,14 @@ import {
     GraphQLObjectType
 } from 'graphql';
 
-// Example import
-// import addUser from '..';
 import addEvent from './mutations/events/addEvent';
+import updateEvent from './mutations/events/updateEvent';
 
 // Add any sort of CUD operations here
 export default new GraphQLObjectType({
     name: 'Mutation',
     fields: {
-        addEvent
+        addEvent,
+		updateEvent
     }
 });

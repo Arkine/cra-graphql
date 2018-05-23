@@ -1,7 +1,8 @@
 import React from 'react';
 
 import {
-	EventsFeed
+	EventsFeed,
+	AddEvent
 } from '../';
 
 export default class EventsPage extends React.Component {
@@ -10,6 +11,7 @@ export default class EventsPage extends React.Component {
 			<div className="EventsPage">
 				<h1>Events</h1>
 				<EventsFeed />
+				<AddEvent />
 			</div>
 		);
 	}

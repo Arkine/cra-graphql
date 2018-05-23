@@ -10,6 +10,7 @@ export default {
 	type: new GraphQLList(EventType),
 	description: "return all events",
 	resolve() {
+		console.log('Getting all events...');
 		return eventController.getEvents();
 	}
 }
