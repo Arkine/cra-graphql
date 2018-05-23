@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
@@ -24,4 +25,8 @@ export default class App extends React.Component {
 			</AppWrapper>
 		);
 	}
+}
+
+App.propTypes = {
+	children: PropTypes.node
 }

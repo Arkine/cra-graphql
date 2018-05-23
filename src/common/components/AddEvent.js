@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 
 import ADD_EVENT_MUTATION from 'server/api/queries/events/addEvent';
@@ -35,6 +35,14 @@ class AddEvent extends React.Component {
 			</form>
 		);
 	}
+}
+
+AddEvent.defaultProps = {
+	addEventMutation: () => {}
+};
+
+AddEvent.propTypes = {
+	addEventMutation: PropTypes.func.isRequired,
 }
 
 export default graphql(ADD_EVENT_MUTATION, { name: 'addEventMutation' })(AddEvent); 

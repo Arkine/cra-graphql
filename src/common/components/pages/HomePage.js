@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class HomePage extends React.Component {
 	render() {
@@ -15,4 +16,12 @@ export default class HomePage extends React.Component {
 			</div>
 		);
 	}
+}
+
+HomePage.defaultProps = {
+	isAuthenticated: false,
+}
+
+HomePage.propTypes = {
+	isAuthenticated: PropTypes.bool.isRequired
 }

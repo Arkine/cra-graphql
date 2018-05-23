@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import AppliedRoute from './AppliedRoute';
 import UnathenticatedRoute from './UnauthenticatedRoute';
