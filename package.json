@@ -76,7 +76,6 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "watch": "cra-build-watch",
     "start:server": "nodemon ./src/start.js --exec babel-node",
     "dev": "concurrently --raw --kill-others-on-fail \"yarn run start:server\" \"yarn run start\""
   },
