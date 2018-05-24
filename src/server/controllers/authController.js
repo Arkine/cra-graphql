@@ -15,9 +15,9 @@ module.exports = {
 			email,
 			password: hashedPassword
 		});
-
+		
 		await user.save();
-
+		
 		console.log('user saved!');
 
 		return {

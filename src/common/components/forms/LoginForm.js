@@ -20,6 +20,10 @@ class LoginForm extends React.Component {
 			}
 		});
 
+		console.log("props", this.props);
+		console.log("user resp", user);
+
+
 		if (user) {
 			console.log('logged in!', user);
 		}

@@ -5,6 +5,7 @@ import {
 import EventType from './types/eventType';
 import UserType from './types/userType';
 import AuthType from './types/authType';
+import ErrorType from './types/errorType';
 
 import query from './rootQuery';
 import mutation from './rootMutations';
@@ -15,6 +16,7 @@ export default new GraphQLSchema({
 	types: [
 		EventType,
 		UserType,
-		AuthType
+		AuthType,
+		ErrorType
 	]
 });

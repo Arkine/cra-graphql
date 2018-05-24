@@ -19,6 +19,7 @@ export default {
 	},
 	resolve: async (parent, {email, password}) => {
 		console.log('Loggin in...');
-		return await authController.login(email, password);
+		const data = await authController.login(email, password);
+		console.log('data', data);
 	}
 }

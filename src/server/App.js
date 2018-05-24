@@ -1,14 +1,16 @@
 import express from 'express';
 import session from 'express-session';
 import path from 'path';
-import expressValidator from 'express-validator';
-import passport from 'passport';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
+import { formatError } from 'apollo-errors';
+
+// import expressValidator from 'express-validator';
+// import passport from 'passport';
 // import jwt from 'express-jwt';
+// import mongoose from 'mongoose';
 
 import schema from './api/rootSchema';
 // import './passportHandler.js';
@@ -34,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Expose methods for validating data
-app.use(expressValidator());
+// app.use(expressValidator());
 
 // Populate req.cookies
 app.use(cookieParser());
@@ -83,6 +85,7 @@ app.use(cookieParser());
 // Graphql Server
 app.use('/graphql', graphqlHTTP(req => ({
 	schema,
+	// formatError,
 	graphiql: isDev, // Lets us use the cool graphql testing tool. Disable for live
 	context: {
 		...req
