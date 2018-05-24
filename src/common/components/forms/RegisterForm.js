@@ -2,7 +2,7 @@ import React from 'react';
 
 import { graphql } from 'react-apollo';
 
-import REGISTER_USER_QUERY from 'server/api/queries/users/addUser';
+import REGISTER_USER_QUERY from '../queries/auth/register';
 
 class RegisterForm extends React.Component {
 	state = {
@@ -11,16 +11,22 @@ class RegisterForm extends React.Component {
 		password: ''
 	}
 
-	submitForm(e) {
+	async submitForm(e) {
 		e.preventDefault();
-
-		this.props.registerUserMutation({
+		console.log('form submitting...');
+		const user = await this.props.registerUserMutation({
 			variables: {
 				name: this.state.name,
 				email: this.state.email,
 				password: this.state.password
-			}
+			},
 		});
+		
+		console.log('okay!!', this.props);
+
+		if (user) {
+			window.location.pathname = '/login';
+		}
 	}
 
 	render() {

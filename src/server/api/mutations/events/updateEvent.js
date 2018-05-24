@@ -18,7 +18,9 @@ export default {
 			type: GraphQLString
 		}
 	},
-	resolve(parent, args) {
+	resolve: (parent, args) => {
+		console.log('updating event...', args.id);
+		
 		return eventController.updateEvent(args);
 	}
 };

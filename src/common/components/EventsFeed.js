@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 
-import GET_ALL_EVENTS_QUERY from 'server/api/queries/events/getAllEvents';
+import GET_ALL_EVENTS_QUERY from './queries/events/getAllEvents';
 
 class EventsFeed extends React.Component {
 

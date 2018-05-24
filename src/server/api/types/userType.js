@@ -14,10 +14,10 @@ export default new GraphQLObjectType({
                 return root.id;
             }
         },
-        name: {
+        username: {
             type: GraphQLString,
             resolve: (root, args, context, info) => {
-                return root.name;
+                return root.username;
             }
         },
 		email: {

@@ -4,7 +4,6 @@ import { Route, Redirect } from 'react-router-dom';
 // Parses out query string params
 function querystring(name, url = window.location.href) {
     name = name.replace(/[[]]/g, "\\$&");
-    console.log('redired:', url);
 
     const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i");
     const results = regex.exec(url);

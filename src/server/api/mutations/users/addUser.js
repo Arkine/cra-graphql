@@ -21,7 +21,7 @@ export default {
 			type: GraphQLString
 		}
 	},
-	resolve(parent, args) {
+	resolve: (parent, args) => {
 		return userController.addUser(args);
 	}
 };

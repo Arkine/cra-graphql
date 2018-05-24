@@ -15,7 +15,7 @@ export default {
 			type: GraphQLString
 		}
 	},
-	resolve(parent, args) {
+	resolve: (parent, args) => {
 		console.log('adding event:', args.title);
 		return eventController.addEvent(args);
 	}

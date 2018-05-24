@@ -2,10 +2,10 @@ import {
 	GraphQLObjectType
 } from 'graphql';
 
-import events from './resolvers/events/getAllEvents';
-import event from './resolvers/events/getEvent';
-
-import user from './resolvers/users/getUser';
+import events from './queries/events/getAllEvents';
+import event from './queries/events/getEvent';
+import user from './queries/users/getUser';
+import me from './queries/auth';
 
 // This is where our Query names are set and resolve to
 export default new GraphQLObjectType({
@@ -13,6 +13,7 @@ export default new GraphQLObjectType({
 	fields: () => ({
 		events,
 		event,
-		user
+		user,
+		me
 	})
 });

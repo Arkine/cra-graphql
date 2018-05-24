@@ -1,68 +1,48 @@
-import passport from 'passport';
-import jsonwebtoken from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
 
 const User = mongoose.model('User');
 
-export function authUser (req, res, next) {
-	const token = req.headers = ['authorization'];
-	try {
-		req.user = verifyToken(token);
-		next();
-	} catch (e) {
-		res.status(401).json({
-			message: e.message
-		})
-	}
-};
+module.exports = {
+	register: async (name, email, password) => {
+		const hashedPassword = await bcrypt.hash(password, 10);
 
-export async function createToken(email, password) {
-	const user = await User.findOne({ where: { email }});
+		console.log('hashed...');
 
-	if (!user) {
-		throw new Error('No user with that email');
-	}
+		const user = new User({
+			name,
+			email,
+			password: hashedPassword
+		});
 
-	const isValid = await bcrypt.compare(password, user.password);
+		await user.save();
 
-	if (!isValid) {
-		throw new Error('Invalid Password');
-	}
+		console.log('user saved!');
 
-	// return json web token
-	return jsonwebtoken.sign({
-		id: user.id,
-		email: user.email
-	}, process.env.SECRET, {
-		expiresIn: '3h',
-	})
-};
-
-export async function verifyToken(token) {
-	const [prefix, payload] = token.split(' ');
-
-	let user = null;
-	
-	if (!payload) {
-		throw new Error('No token provided');
-	}
-
-	if (prefix !== 'JWT') {
-		throw new Error('Invalid header format.');
-	}
-
-	jsonwebtoken.verify(payload, process.env.SECRET, (err, data) => {
-		if (err) {
-			throw new Error('Invalid Token!');
-		} else {
-			user = User.findOne({ where: { email: data.email } });
+		return {
+			token: jwt.sign({ userId: user.id }, process.env.SECRET),
+			user
 		}
-	});
+	},
 
-	if (!user) {
-		throw new Error('User does not exist.');
+	login: async (email, password) => {
+		const user = await User.findOne({ email });
+
+		if (!user) {
+			throw new Error('No User found with that email.');
+		}
+
+		const valid = bcrypt.compare(password, user.password);
+
+		if (!valid) {
+			throw new Error('Invalid password.');
+		}
+
+		return {
+			token: jwt.sign({ userId: user.id }, process.env.SECRET),
+			user
+		}
 	}
 
-	return user;
-};
+}

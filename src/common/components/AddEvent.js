@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 
-import ADD_EVENT_MUTATION from 'server/api/queries/events/addEvent';
-import GET_ALL_EVENTS_QUERY from 'server/api/queries/events/getAllEvents';
+import ADD_EVENT_MUTATION from './queries/events/addEvent';
+import GET_ALL_EVENTS_QUERY from './queries/events/getAllEvents';
 
 class AddEvent extends React.Component {
 	state = {

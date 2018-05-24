@@ -8,16 +8,12 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
-import jwt from 'express-jwt';
+// import jwt from 'express-jwt';
 
 import schema from './api/rootSchema';
-import './passportHandler.js';
+// import './passportHandler.js';
 
-import {
-	authUser,
-	createToken,
-	verifyToken
-} from './controllers/authController';
+import authController from './controllers/authController';
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
@@ -44,51 +40,52 @@ app.use(expressValidator());
 app.use(cookieParser());
 
 // Session data
-app.use(session({
-	secret: process.env.SECRET,
-	key: process.env.KEY,
-	resave: false,
-	saveUninitialized: false,
-	store: new MongoStore({ mongooseConnection: mongoose.connection })
-}));
+// app.use(session({
+// 	secret: process.env.SECRET,
+// 	key: process.env.KEY,
+// 	resave: false,
+// 	saveUninitialized: false,
+// 	store: new MongoStore({ mongooseConnection: mongoose.connection })
+// }));
 
-// Passport for our login logic
-app.use(passport.initialize());
-app.use(passport.session());
+// // Passport for our login logic
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Authentication middleware
 // app.use(jwt({
 // 	secret: process.env.SECRET
 // }));
 
-app.use('/login', (req, res, next) => {
+// app.use('/login', (req, res, next) => {
 
-	passport.authenticate('local', function(err, user, info) {
-		if (err) { 
-			throw new Error(err);
-		}
+// 	passport.authenticate('local', function(err, user, info) {
+// 		if (err) {
+// 			throw new Error(err);
+// 		}
 
-		if (!user) {
-			return res.redirect('login');
-		}
+// 		if (!user) {
+// 			return res.redirect('login');
+// 		}
 
-		req.logIn(user, (err) => {
-			if (err) {
-				throw new Error(err);
-			}
-			const redirect = req.query.redirect || '/';
-			return res.redirect(redirect);
-		})
+// 		req.logIn(user, (err) => {
+// 			if (err) {
+// 				throw new Error(err);
+// 			}
+// 			const redirect = req.query.redirect || '/';
+// 			return res.redirect(redirect);
+// 		})
 
-	})
-});
+// 	})
+// });
+// app.post('/login', authController.login)
 
 // Graphql Server
 app.use('/graphql', graphqlHTTP(req => ({
 	schema,
 	graphiql: isDev, // Lets us use the cool graphql testing tool. Disable for live
 	context: {
-		user: req.user // TODO: Get working with JWT
+		...req
 	}
 })));
 

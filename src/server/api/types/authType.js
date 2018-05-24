@@ -3,21 +3,20 @@ import {
 	GraphQLString
 } from "graphql";
 
+import UserType from '../types/userType';
+
 export default new GraphQLObjectType({
 	name: 'Auth',
 	description: 'Authorization data',
 	fields: {
-		email: {
+		token: {
 			type: GraphQLString,
 			resolve: (root, args, context, info) => {
-				return root.email
+				return root.token
 			}
 		},
-		password: {
-			type: GraphQLString,
-			resolve: (root, args, context, info) => {
-				return root.password
-			}
+		user: {
+			type: UserType
 		}
 	}
 });

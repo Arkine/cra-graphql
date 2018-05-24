@@ -1,9 +1,13 @@
 import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+
 
 const User = mongoose.model('User');
 
 module.exports = {
-	addUser: (data) => {
+	addUser: async (data) => {
+
 		const user = new User({
 			name: data.name,
 			email: data.email,
