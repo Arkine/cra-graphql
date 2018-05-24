@@ -5,10 +5,6 @@ export default gql`
 		register(name: $name, email: $email, password: $password) {
 			user {
 				id
-			},
-			errors {
-				key,
-				message
 			}
 		}
 	}

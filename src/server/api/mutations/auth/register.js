@@ -21,7 +21,7 @@ export default {
 		},
 		email: {
 			type: GraphQLString
-		}
+		} 
 	},
 	resolve: async (parent, {name, email, password}) => {
 		console.log('registering user...');
@@ -56,9 +56,9 @@ export default {
 			});
 		}
 
-		if (errors.length) {
-			return { errors };
-		}
+		// if (errors.length) {
+			// return { errors };
+		// }
 		
 		try {
 			return await authController.register(name, email, password);

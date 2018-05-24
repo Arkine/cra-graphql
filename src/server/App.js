@@ -85,7 +85,7 @@ app.use(cookieParser());
 // Graphql Server
 app.use('/graphql', graphqlHTTP(req => ({
 	schema,
-	// formatError,
+	formatError,
 	graphiql: isDev, // Lets us use the cool graphql testing tool. Disable for live
 	context: {
 		...req

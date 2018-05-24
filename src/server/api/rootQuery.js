@@ -14,6 +14,6 @@ export default new GraphQLObjectType({
 		events,
 		event,
 		user,
-		me
+		// me
 	})
 });

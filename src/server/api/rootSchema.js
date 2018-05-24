@@ -17,6 +17,6 @@ export default new GraphQLSchema({
 		EventType,
 		UserType,
 		AuthType,
-		ErrorType
+		// ErrorType
 	]
 });
