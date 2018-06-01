@@ -10,7 +10,7 @@ export const AppContent = styled.main`
 	display: flex;
 	justify-content: center;
 
-	min-height: 90vh;
+	min-height: 85vh;
 `;
 
 export const AppInner = styled.main`

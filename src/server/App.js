@@ -8,16 +8,16 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
-import jwt from 'express-jwt';
+// import jwt from 'express-jwt';
 
 import schema from './api/rootSchema';
 import './passportHandler.js';
 
-import {
-	authUser,
-	createToken,
-	verifyToken
-} from './controllers/authController';
+// import {
+// 	authUser,
+// 	createToken,
+// 	verifyToken
+// } from './controllers/authController';
 
 const isDev = process.env.NODE_ENV === 'development' ? true : false;
 
@@ -62,8 +62,10 @@ app.use(passport.session());
 // }));
 
 app.use('/login', (req, res, next) => {
-
+	console.log('got here');
 	passport.authenticate('local', function(err, user, info) {
+		console.log('authenticating...', info);
+
 		if (err) { 
 			throw new Error(err);
 		}
@@ -80,7 +82,7 @@ app.use('/login', (req, res, next) => {
 			return res.redirect(redirect);
 		})
 
-	})
+	})(req, res, next);
 });
 
 // Graphql Server

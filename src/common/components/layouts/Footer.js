@@ -1,14 +1,20 @@
 import React from 'react';
 
+// import {
+// 	FooterNavigation,
+// } from '../navigation';
+
 import {
-	FooterNavigation
-} from '../navigation';
+	Wrapper
+} from '../../../styles/components/layouts/Footer';
 
 export default class Footer extends React.PureComponent {
 	render() {
 		return (
 			<footer>
-				<FooterNavigation />
+				<Wrapper>
+					<span>Copyright {`${new Date().getFullYear()}`} </span>
+				</Wrapper>
 			</footer>
 		);
 	}
