@@ -6,7 +6,7 @@ import setTitle from '../data/setTitle';
 export default class NotFound extends React.Component {
 	render() {
 		return (
-			<div className="NotFound">
+			<div>
 				<h1>Page Not Found!</h1>
 			</div>
 		);

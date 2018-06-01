@@ -8,7 +8,7 @@ import setTitle from '../data/setTitle';
 export default class RegisterPage extends React.Component {
     render() {
         return (
-            <div className="RegisterPage">
+            <div>
                 <h1>Register</h1>
                 <RegisterForm />
             </div>

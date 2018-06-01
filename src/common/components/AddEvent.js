@@ -24,7 +24,7 @@ class AddEvent extends React.Component {
 	render() {
 		return (
 			<form onSubmit={this.submitForm.bind(this)}>
-				<div className="field">
+				<div>
 					<label>
 						Event Title:
 					</label>

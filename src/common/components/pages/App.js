@@ -8,7 +8,8 @@ import Footer from '../layouts/Footer';
 import 'styles/base';
 import {
 	AppWrapper,
-	AppContent
+	AppContent,
+	AppInner
 } from 'styles/App';
 
 export default class App extends React.Component {
@@ -18,7 +19,9 @@ export default class App extends React.Component {
 				<Header />
 
 				<AppContent>
-					{this.props.children}
+					<AppInner>
+						{this.props.children}
+					</AppInner>
 				</AppContent>
 
 				<Footer />

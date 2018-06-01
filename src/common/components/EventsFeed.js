@@ -30,15 +30,15 @@ class EventsFeed extends React.Component {
 
 		eventsContent = events.map((event, index) => {
 			return (
-				<div className="event" key={index}>
+				<div key={index}>
 					<Link to={`events/${event.id}`}>{event.title}</Link>
 				</div>
 			);
 		});
 
 		return (
-			<section className="EventsFeed">
-				<div className="EventsFeed__wrapper">
+			<section>
+				<div>
 					{eventsContent}
 				</div>
 			</section>

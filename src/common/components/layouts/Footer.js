@@ -7,8 +7,8 @@ import {
 export default class Footer extends React.PureComponent {
 	render() {
 		return (
-			<footer className="Footer">
-				<div className="Footer__wrapper">
+			<footer>
+				<div>
 					<FooterNavigation />
 				</div>
 			</footer>

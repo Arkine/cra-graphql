@@ -7,8 +7,8 @@ import {
 export default class Header extends React.PureComponent {
 	render() {
 		return (
-			<header className="Header">
-				<div className="Header__wrapper">
+			<header>
+				<div>
 					<PrimaryNavigation />
 				</div>
 			</header>

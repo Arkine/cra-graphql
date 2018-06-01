@@ -3,7 +3,7 @@ import React from 'react';
 export default class LoadingSpinner extends React.PureComponent {
 	render() {
 		return (
-			<div className="LoadingSpinner">
+			<div>
 				<span>Loading...</span>
 			</div>
 		);

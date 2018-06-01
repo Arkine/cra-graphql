@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class ErrorMessage extends React.PureComponent {
 	render() {
 		return (
-			<div className="error">
+			<div>
 				<p>{this.props.message}</p>
 			</div>
 		);

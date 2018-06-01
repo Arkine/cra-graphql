@@ -11,7 +11,7 @@ import setTitle from '../data/setTitle';
 export default class EventsPage extends React.Component {
 	render() {
 		return(
-			<div className="EventsPage">
+			<div>
 				<h1>Events</h1>
 				<EventsFeed />
 				<AddEvent />

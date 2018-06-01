@@ -9,10 +9,10 @@ export default class HomePage extends React.Component {
 		const { isAuthenticated } = this.props;
 
 		return(
-			<div className="HomePage">
+			<div>
 				<h1>Home</h1>
 				{!isAuthenticated && 
-					<div className="content">
+					<div>
 						Welcome to My Site
 					</div>
 				}
