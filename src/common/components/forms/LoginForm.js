@@ -1,7 +1,5 @@
 import React from 'react';
 
-const AUTH_TOKEN = "test"; // TODO: do NOT store Auth token locally
-
 export default class LoginForm extends React.Component {
 	
     render() {
