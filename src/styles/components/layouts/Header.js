@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import variables from '../../variables';
+
 export const HeaderWrapper = styled.div`
 	display: flex;
 	justify-content: center;
@@ -9,5 +11,5 @@ export const HeaderWrapper = styled.div`
 
 export const HeaderContent = styled.div`
 	width: 100%;
-	max-width: 68rem;
+	max-width: ${variables.rowWidth};
 `;

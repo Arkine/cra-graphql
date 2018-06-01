@@ -8,9 +8,7 @@ export default class Footer extends React.PureComponent {
 	render() {
 		return (
 			<footer>
-				<div>
-					<FooterNavigation />
-				</div>
+				<FooterNavigation />
 			</footer>
 		);
 	}

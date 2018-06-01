@@ -4,7 +4,6 @@ import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 import { Router } from 'react-router-dom';
 
-
 import Routes from './Routes';
 import { history } from '../server/store';
 

@@ -78,8 +78,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+	"dev:server": "NODE_ENV=development webpack-dev-server --config=config/webpack.config.dev.js",
     "start:server": "nodemon ./src/start.js --exec babel-node",
-    "dev": "concurrently --raw --kill-others-on-fail \"yarn run start:server\" \"yarn run start\""
+    "dev": "concurrently --raw --kill-others-on-fail \"yarn run start:server\" \"yarn run dev:server\""
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

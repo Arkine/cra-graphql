@@ -10,7 +10,7 @@ import {
 	AppWrapper,
 	AppContent,
 	AppInner
-} from 'styles/App';
+} from 'styles/app';
 
 export default class App extends React.Component {
 	render() {
