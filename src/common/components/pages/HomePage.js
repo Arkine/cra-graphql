@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import setTitle from '../data/setTitle';
+
+@setTitle(() => "Home")
 export default class HomePage extends React.Component {
 	render() {
 		const { isAuthenticated } = this.props;

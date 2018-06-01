@@ -5,6 +5,9 @@ import {
 	AddEvent
 } from '../';
 
+import setTitle from '../data/setTitle';
+
+@setTitle('Events')
 export default class EventsPage extends React.Component {
 	render() {
 		return(
