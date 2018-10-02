@@ -3,14 +3,14 @@ import mongoose from 'mongoose';
 const User = mongoose.model('User');
 
 module.exports = {
-	addUser: (data) => {
+	addUser: async (data) => {
 		const user = new User({
 			name: data.name,
 			email: data.email,
 			password: data.password
 		});
 
-		user.save();
+		await user.save();
 
 		return user;
 	},
@@ -18,9 +18,9 @@ module.exports = {
     getUsers: async () => {
         const users = await User.find({}).limit(10);
 
-        if (!users) {
-
-        }
+        // if (!users) {
+		// 	throw new Error('No users found');
+        // }
 
         return users;
     },
@@ -29,7 +29,7 @@ module.exports = {
         const user = await User.findById(id);
 
         if (!user) {
-            
+			throw new Error('User not found');
         }
 
         return user;

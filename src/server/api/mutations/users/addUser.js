@@ -22,6 +22,11 @@ export default {
 		}
 	},
 	resolve(parent, args) {
-		return userController.addUser(args);
+
+		try {
+			return userController.addUser(args);
+		} catch(error) {
+			return error;
+		}
 	}
 };

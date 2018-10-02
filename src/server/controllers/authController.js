@@ -1,4 +1,4 @@
-import passport from 'passport';
+// import passport from 'passport';
 import jsonwebtoken from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
@@ -18,11 +18,13 @@ export function authUser (req, res, next) {
 };
 
 export async function createToken(email, password) {
-	const user = await User.findOne({ where: { email }});
+	const user = await User.findOne({ email: email });
 
 	if (!user) {
 		throw new Error('No user with that email');
 	}
+
+	console.log("User:", user);
 
 	const isValid = await bcrypt.compare(password, user.password);
 

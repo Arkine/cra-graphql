@@ -44,46 +44,44 @@ app.use(expressValidator());
 app.use(cookieParser());
 
 // Session data
-app.use(session({
-	secret: process.env.SECRET,
-	key: process.env.KEY,
-	resave: false,
-	saveUninitialized: false,
-	store: new MongoStore({ mongooseConnection: mongoose.connection })
-}));
+// app.use(session({
+// 	secret: process.env.SECRET,
+// 	key: process.env.KEY,
+// 	resave: false,
+// 	saveUninitialized: false,
+// 	store: new MongoStore({ mongooseConnection: mongoose.connection })
+// }));
 
 // Passport for our login logic
 app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.session());
 
 // Authentication middleware
 // app.use(jwt({
 // 	secret: process.env.SECRET
 // }));
 
-app.use('/login', (req, res, next) => {
-	console.log('got here');
-	passport.authenticate('local', function(err, user, info) {
-		console.log('authenticating...', info);
+// app.use('/login', (req, res, next) => {
+// 	console.log('got here');
+// 	passport.authenticate('local', function(err, user, info) {
+// 		if (err) {
+// 			throw new Error(err);
+// 		}
 
-		if (err) { 
-			throw new Error(err);
-		}
+// 		if (!user) {
+// 			return res.redirect('login');
+// 		}
 
-		if (!user) {
-			return res.redirect('login');
-		}
+// 		req.logIn(user, (err) => {
+// 			if (err) {
+// 				throw new Error(err);
+// 			}
+// 			const redirect = req.query.redirect || '/';
+// 			return res.redirect(redirect);
+// 		})
 
-		req.logIn(user, (err) => {
-			if (err) {
-				throw new Error(err);
-			}
-			const redirect = req.query.redirect || '/';
-			return res.redirect(redirect);
-		})
-
-	})(req, res, next);
-});
+// 	})(req, res, next);
+// });
 
 // Graphql Server
 app.use('/graphql', graphqlHTTP(req => ({
